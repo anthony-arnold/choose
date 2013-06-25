@@ -40,7 +40,7 @@ static big_uint CHOOSE_K = 0;
 
 // Print usage
 static void print_usage() {
-    std::cerr << "usage: choose [-t|c] element [elements ...] k" << std::endl;
+    std::cerr << "usage: choose [-t | -c] <item> [<item> ...] k" << std::endl;
 }
 
 // Read the separator argument (if it exists)
@@ -80,13 +80,13 @@ static bool read_k(const std::string &arg) {
     return true;
 }
 
-// When a string is found, input here. This function takes care of
-// the case when the input array type changes for integer to string
+// When a string is found, input here.
 static void input_string(const std::string &str) {
     INPUT_VECTOR.emplace_back(str);
 }
 
-
+// Generate a range of strings representing integers
+// Range can be descending.
 struct range_generator {
     
     range_generator(big_int start, big_int end) : 
@@ -106,7 +106,7 @@ private:
 };
 
 
-
+// Add range [first,last] to the input vector
 static void input_range(big_int first, big_int last) {
     // +1 because range is inclusive
     big_int count = (first < last ? last - first : first - last) + 1;
@@ -278,7 +278,7 @@ int main (int argc, char **argv) {
     if (argc == 1 && (*argv)[0] == '-' && (*argv)[1] == '\0') {
         std::string word;
         while (std::cin >> word) {
-            INPUT_VECTOR.push_back(word);
+            input_string(word);
         }
     } else {    
         // Fill the element vector
