@@ -52,7 +52,7 @@ If the only item given is equal to `-`, the program will read the input set from
     1,3,4,5
     2,3,4,5
     
-    $ choose -t 0-3 5-7 
+    $ choose -t 0-3 5-7 6
     0    1    2    3    5    6
     0    1    2    3    5    7
     0    1    2    3    6    7
