@@ -94,7 +94,7 @@ directory in your path that makes sense:
     
 Under Windows, copy the `choose.exe` file to somewhere like 
 `C:\Program Files\anthony-arnold\bin\choose.exe`
-and add the directory to the `PATH` environment variable. This will make `choose` available form the
+and add the directory to the `PATH` environment variable. This will make `choose` available from the
 command line.
     
 ## Contributions
